@@ -13,16 +13,23 @@ namespace InmetaTimeReg.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult TimeList()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Blank";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult TimeListCopy()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Copy from last week";
+
+            return View();
+        }
+
+        public IActionResult DeliverTimeList()
+        {
+            ViewData["Message"] = "Copy from last week";
 
             return View();
         }

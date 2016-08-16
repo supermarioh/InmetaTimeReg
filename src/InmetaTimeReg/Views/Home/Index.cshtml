@@ -17,8 +17,8 @@
         <h5 align="left">Du kan registere timeliste ved å kopiere fra forrige uke eller åpne en blank timeliste.</h5>
         <h5 align="left" style="margin-bottom:35px">Velger du å hente inn forrige uke må du spesifisere timer og beskrivelsefeltet selv.</h5>
 
-        <button class="button button1">+ Kopier forrige uke</button>
-        <button class="button button1">+ Åpne blank timeliste</button>
+        <button class="button button1" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Kopier forrige uke</button>
+        <button class="button button1" type="button" onclick="location.href='@Url.Action("TimeList","Home")'">+ Åpne blank timeliste</button>
 
         <h5 align="right">God timeføring :)</h5>
     </div>
