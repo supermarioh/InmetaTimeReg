@@ -22,13 +22,55 @@ textarea {
     z-index: 10 !important;
 }
 
-    .carousel-caption p {
-        font-size: 20px;
-        line-height: 1.4;
-    }
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
 
 @media (min-width: 768px) {
     .carousel-caption {
         z-index: 10 !important;
     }
 }
+.button {
+    background-color: #BCE981; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    min-width: 250px;
+    max-width: 550px;
+    text-align: center;
+    
+}
+
+.button1 {
+    background-color: white;
+    color: #477500;
+    border: 2px solid #BCE981;
+    display: table;
+    margin: 0 auto 25px;
+}
+
+#top, #bottom, #left, #right {
+	background: #BCE981;
+	position: fixed;
+}
+#left, #right {
+	top: 0; bottom: 0;
+	width: 8px;
+}
+#left { left: 0; }
+#right { right: 0; }
+		
+#top, #bottom {
+    left: 0; right: 0;
+    height: 8px;
+}
+#top { top: 0; }
+#bottom { bottom: 0; }
