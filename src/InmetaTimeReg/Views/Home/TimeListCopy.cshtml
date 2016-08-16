@@ -1,7 +1,153 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@*@{
+        ViewData["Title"] = "Contact";
+    }
+    <h2>@ViewData["Title"].</h2>
+    <h3>@ViewData["Message"]</h3>*@
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color:dimgrey;max-height:25px">
+    <div style="align-content:center;padding-top:15px;padding-left:55px">
+        <select style="background-color:dimgrey;border:none;vertical-align:central">
+            <option value="10">Uke 10</option>
+            <option value="11">Uke 11</option>
+            <option value="11">Uke 12</option>
+        </select>
+        <span style="font-size:16px;align-content:center;color:lightgray">07.03-13.03</span>
+    </div>
+</div>
 
-<p>Use this area to provide additional information.</p>
+<div class="container" style="padding-top:35px">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Man</span>
+            </br>
+            <span style="font-size:22px;align-content:center">07</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" style="align-content:flex-start" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0,5</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Tirs</span>
+            </br>
+            <span style="font-size:22px;align-content:center">08</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0,5</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Ons</span>
+            </br>
+            <span style="font-size:22px;align-content:center">09</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0,5</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Tors</span>
+            </br>
+            <span style="font-size:22px;align-content:center">11</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0,5</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Fre</span>
+            </br>
+            <span style="font-size:22px;align-content:center">11</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0,5</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Lør</span>
+            </br>
+            <span style="font-size:22px;align-content:center">12</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0</h5>
+    </div>
+</div>
+
+<div class="container">
+    <div class="column-left">
+        <time class="icon">
+            <span style="font-size:14px">Søn</span>
+            </br>
+            <span style="font-size:22px;align-content:center">13</span>
+        </time>
+    </div>
+
+    <div class="column-center">
+        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    </div>
+
+    <div class="column-right" style="padding-left:25px">
+        <h5>0</h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column-left"></div>
+    <div class="column-center"></div>
+    <div class="column-right"><h1>2,5 t</h1></div>
+
+</div>
+<div class="row">
+    <div>
+        <button class="button button4" type="button" onclick="location.href='@Url.Action("DeliverTimeList","Home")'"><h3>Lever timelist</h3></button>
+    </div>
+</div>

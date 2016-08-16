@@ -69,6 +69,16 @@ textarea {
     border: 2px solid #D8D8D8;
     display: table;
     margin: 0 auto 25px;
+    min-width: 150px;
+    max-width: 250px;
+}
+.button4 {
+    background-color: #e7e7e7; 
+    color: white;
+    display: table;
+    margin: 0 auto 25px;
+    min-width: 350px;
+    max-width: 550px;
 }
 #top, #bottom, #left, #right {
 	background: #BCE981;
@@ -87,3 +97,7 @@ textarea {
 }
 #top { top: 0; }
 #bottom { bottom: 0; }
+
+.column-left{ float: left; width: 25%; }
+.column-right{ float: right; width: 25%; }
+.column-center{ display: inline-block; width: 50%; }
