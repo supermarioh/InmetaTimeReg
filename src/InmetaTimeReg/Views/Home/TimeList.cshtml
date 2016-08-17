@@ -3,6 +3,13 @@
     }
     <h2>@ViewData["Title"].</h2>
     <h3>@ViewData["Message"]</h3>*@
+
+@section scripts{
+    <script>
+
+    </script>
+}
+
 <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:dimgrey;max-height:25px">
     <div style="align-content:center;padding-top:15px;padding-left:55px">
         <select style="background-color:dimgrey;border:none;vertical-align:central">
@@ -24,7 +31,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" style="align-content:flex-start" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -42,7 +49,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal" >+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -60,7 +67,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -78,7 +85,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -96,7 +103,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -114,7 +121,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -132,7 +139,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -148,6 +155,39 @@
 </div>
 <div class="row">
     <div>
-        <button class="button button4" type="button" onclick="location.href='@Url.Action("DeliverTimeList","Home")'"><h3>Lever timelist</h3></button>
+        <button class="button button4" type="button" data-toggle="modal" data-target="#myModal"><h3>Lever timelist</h3></button>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#4A4A4A">
+                <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+                <h4 class="modal-title" style="color:white">Tirsdag 08 mars</h4>
+            </div>
+
+            <div class="modal-body" style="background-color:#E6F6D2">
+                <div >
+                    <select style="background-color:white;border:none;vertical-align:central">
+                        <option value="Inmarsat">Inmarsat</option>
+                        <option value="KLP">KLP</option>
+                        <option value="NRK">NRK</option>
+                    </select>
+                </div>
+                <div style="background-color:white">
+                     <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
+                </div>
+            </div>
+
+            <div class="modal-footer" style="background-color:#FEFAA4">
+                <strong type="link" class="btn btn-default" data-dismiss="modal">Gå til onsdag 09 mars ></strong>
+            </div>
+        </div>
+
     </div>
 </div>
