@@ -12,7 +12,6 @@
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
-select,
 textarea {
     max-width: 280px;
 }
@@ -101,3 +100,69 @@ textarea {
 .column-left{ float: left; width: 25%; }
 .column-right{ float: right; width: 25%; }
 .column-center{ display: inline-block; width: 50%; }
+
+
+
+/* arrows */
+
+select.classic {
+      /* styling */
+  min-width:90%;
+  max-width:98%;
+  background-color: white;
+  border: none;
+  border-radius: 0px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #4C4D4B 50%),
+    linear-gradient(135deg, #4C4D4B 50%, transparent 50%),
+    linear-gradient(to right, #BCE981, #BCE981);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+input[type=text] {
+    padding:5px;
+     border:none; 
+
+}
+::-webkit-input-placeholder{
+    color: #F29F73;
+}
