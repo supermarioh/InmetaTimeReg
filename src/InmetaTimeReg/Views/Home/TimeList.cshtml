@@ -226,7 +226,7 @@
 
                 <table>
                     <tr>
-                        <td style="padding-right:10px"><button class="deletebutton" type="button">X Slett</button></td>
+                        <td style="padding-right:10px"><button class="deletebutton" type="button" data-toggle="modal" data-target="#myModalConfirm">X Slett</button></td>
                         <td><button class="savebutton" type="button">✔ Lagre</button></td>
                     </tr>
                 </table>
@@ -256,6 +256,30 @@
 
             <div class="modal-footer" style="background-color:#FEFAA4">
                 <text type="link" data-dismiss="modal">Gå til onsdag <strong>09</strong> mars ></text>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal ¨Confirm Deletion -->
+<div id="myModalConfirm" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#4A4A4A">
+                <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+                <h4 class="modal-title" style="color:white">Mandag 07 mars</h4>
+            </div>
+
+            <div class="modal-body" style="background-color:#E6F6D2;">
+                <h3>Er du sikker på at du vil slette denne aktiviteten?</h3>
+                <button type="button" >Ja</button>
+                <button type="button" >Angre</button>
+            </div>
+
+            <div class="modal-footer">
             </div>
         </div>
 
