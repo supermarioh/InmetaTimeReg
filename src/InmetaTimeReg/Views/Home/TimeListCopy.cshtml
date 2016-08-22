@@ -3,15 +3,36 @@
     }
     <h2>@ViewData["Title"].</h2>
     <h3>@ViewData["Message"]</h3>*@
+
+@section scripts{
+    <script>
+
+    </script>
+}
+
 <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:dimgrey;max-height:25px">
     <div style="align-content:center;padding-top:15px;padding-left:55px">
-        <select style="background-color:dimgrey;border:none;vertical-align:central">
+        <button type="button" onclick="location.href='@Url.Action("Index","Home")'" style="color:white;background-color:dimgrey;border:none;padding-right:25px"><</button>
+        <select style="background-color:dimgrey;border:none;vertical-align:central;color:white;">
             <option value="10">Uke 10</option>
             <option value="11">Uke 11</option>
             <option value="11">Uke 12</option>
         </select>
-        <span style="font-size:16px;align-content:center;color:lightgray">07.03-13.03</span>
+        <span style="font-size:16px;align-content:center;color:lightgray;padding-left:25px">07.03-13.03</span>
     </div>
+</div>
+
+<div style="padding-top:15px">
+    <div style="border:solid;border-color:#EEA500;">
+        <table>
+            <tr>
+                <td><img src="~/images/warning.png" /></td>
+                <td><h4>Du må utfylle uken før du leverer timelisten din.</h4></td>
+            </tr>
+        </table>
+
+    </div>
+
 </div>
 
 <div class="container" style="padding-top:35px">
@@ -23,12 +44,18 @@
         </time>
     </div>
 
-    <div class="column-center">
-        <button class="button button3" type="button" style="align-content:flex-start" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+    <div class="column-center" data-toggle="modal" data-target="#myModal">
+        <div class="ListItem">
+            <h5 class="ProjectCustomer"><strong>Folkehelseinstituttet</strong></h5>
+            <h5 class="ProjectDescription">Samhandling og nytt intranett</h5>
+            <h5 class="ProjectDescription">Analyse/specificasjon</h5>
+            <h5 class="ProjectDescription">Overordnet design</h5>
+        </div>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
-    <div class="column-right" style="padding-left:25px">
-        <h5>0,5</h5>
+    <div class="column-right" style="padding-left:25px;background-color:#CDF796">
+        <h5 style="color:gray">0,5</h5>
     </div>
 </div>
 
@@ -42,7 +69,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -60,7 +87,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -78,7 +105,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -96,7 +123,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -114,7 +141,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -132,7 +159,7 @@
     </div>
 
     <div class="column-center">
-        <button class="button button3" type="button" onclick="location.href='@Url.Action("TimeListCopy","Home")'">+ Legg til ny</button>
+        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
     </div>
 
     <div class="column-right" style="padding-left:25px">
@@ -143,11 +170,188 @@
 <div class="row">
     <div class="column-left"></div>
     <div class="column-center"></div>
-    <div class="column-right"><h1>2,5 t</h1></div>
+    <div class="column-right"><h3>2,5 t</h3></div>
 
 </div>
 <div class="row">
     <div>
-        <button class="button button4" type="button" onclick="location.href='@Url.Action("DeliverTimeList","Home")'"><h3>Lever timelist</h3></button>
+        <button class="button button4" type="button" onclick="location.href='@Url.Action("DeliveryCompleted","Home")'"><h4>✔ Lever timelist</h4></button>
+    </div>
+</div>
+
+
+<!-- Modal Register new Entry -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#4A4A4A">
+                <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+                <h4 class="modal-title" style="color:white">Tirsdag 08 mars</h4>
+            </div>
+
+            <div class="modal-body" style="background-color:#E6F6D2;">
+
+                <select class="classic">
+                    <option selected="selected">Folkehelseinstituttet</option>
+                    <option>Admin</option>
+                    <option>Inmarsat</option>
+                    <option>KLP</option>
+                </select>
+                <select class="classic">
+                    <option>Samhandling og nytt intranet</option>
+                    <option>another option 1</option>
+                    <option>another option 2</option>
+                </select>
+                <select class="classic">
+                    <option>Analyse/spesifikasjon</option>
+                    <option>another option 3</option>
+                    <option>another option 4</option>
+                </select>
+
+                <input type="text" class="descriptionbox" placeholder="Ingen beskrivelse" />
+
+                <select class="classic">
+                    <option>0,5t</option>
+                    <option>1t</option>
+                    <option>1,5t</option>
+                    <option>2t</option>
+                    <option>2,5t</option>
+                    <option>3t</option>
+                    <option>3,5t</option>
+                    <option>4t</option>
+                    <option>4,5t</option>
+                    <option>5t</option>
+                    <option>5,5t</option>
+                    <option>6t</option>
+                    <option>6,5t</option>
+                    <option>7t</option>
+                    <option>7,5t</option>
+                </select>
+
+                <table>
+                    <tr>
+                        <td style="padding-right:10px"><button class="deletebutton" type="button">X Slett</button></td>
+                        <td><button class="savebutton" type="button">✔ Lagre</button></td>
+                    </tr>
+                </table>
+
+
+
+                <div style="background-color:white;padding-top:15px">
+                    <table>
+                        <tr>
+                            <td>
+                                <button class="button button3" type="button">+ Legg til ny</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="~/images/lunchicon.png" />
+                                <input type="checkbox" name="lunch" value="lunch" checked="checked" />
+                            </td>
+                            <td>
+                                <text style="font-size:16px;">8 t</text>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="modal-footer" style="background-color:#FEFAA4">
+                <text type="link" data-dismiss="modal">Gå til onsdag <strong>09</strong> mars ></text>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal ¨Confirm Deletion -->
+<div id="myModalConfirm" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#4A4A4A">
+                <button type="button" class="close" data-dismiss="modal" style="color:white">&times;</button>
+                <h4 class="modal-title" style="color:white">Tirsdag 08 mars</h4>
+            </div>
+
+            <div class="modal-body" style="background-color:#E6F6D2;">
+
+                <select class="classic">
+                    <option selected="selected">Folkehelseinstituttet</option>
+                    <option>Admin</option>
+                    <option>Inmarsat</option>
+                    <option>KLP</option>
+                </select>
+                <select class="classic">
+                    <option>Samhandling og nytt intranet</option>
+                    <option>another option 1</option>
+                    <option>another option 2</option>
+                </select>
+                <select class="classic">
+                    <option>Analyse/spesifikasjon</option>
+                    <option>another option 3</option>
+                    <option>another option 4</option>
+                </select>
+
+                <input type="text" class="descriptionbox" placeholder="Ingen beskrivelse" />
+
+                <select class="classic">
+                    <option>0,5t</option>
+                    <option>1t</option>
+                    <option>1,5t</option>
+                    <option>2t</option>
+                    <option>2,5t</option>
+                    <option>3t</option>
+                    <option>3,5t</option>
+                    <option>4t</option>
+                    <option>4,5t</option>
+                    <option>5t</option>
+                    <option>5,5t</option>
+                    <option>6t</option>
+                    <option>6,5t</option>
+                    <option>7t</option>
+                    <option>7,5t</option>
+                </select>
+
+                <table>
+                    <tr>
+                        <td style="padding-right:10px"><button class="deletebutton" type="button">X Slett</button></td>
+                        <td><button class="savebutton" type="button">✔ Lagre</button></td>
+                    </tr>
+                </table>
+
+
+
+                <div style="background-color:white;padding-top:15px">
+                    <table>
+                        <tr>
+                            <td>
+                                <button class="button button3" type="button">+ Legg til ny</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="~/images/lunchicon.png" />
+                                <input type="checkbox" name="lunch" value="lunch" checked="checked" />
+                            </td>
+                            <td>
+                                <text style="font-size:16px;">8 t</text>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="modal-footer" style="background-color:#FEFAA4">
+                <text type="link" data-dismiss="modal">Gå til onsdag <strong>09</strong> mars ></text>
+            </div>
+        </div>
+
     </div>
 </div>

@@ -27,9 +27,9 @@ namespace InmetaTimeReg.Controllers
             return View();
         }
 
-        public IActionResult DeliverTimeList()
+        public IActionResult DeliveryCompleted()
         {
-            ViewData["Message"] = "Copy from last week";
+            ViewData["Message"] = "Timelisten er levert!";
 
             return View();
         }
