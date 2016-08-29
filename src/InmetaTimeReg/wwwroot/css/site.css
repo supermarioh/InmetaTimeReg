@@ -54,6 +54,8 @@ textarea {
     border: 2px solid #BCE981;
     display: table;
     margin: 0 auto 25px;
+    min-width: 98%;
+    max-width: 99%;
 }
 .button2 {
     background-color: white;
@@ -70,14 +72,15 @@ textarea {
     margin: 0 auto 25px;
     min-width: 150px;
     max-width: 250px;
+
 }
 .button4 {
     background-color: #e7e7e7; 
     color: white;
     display: table;
     margin: 0 auto 25px;
-    min-width: 350px;
-    max-width: 550px;
+    min-width: 95%;
+    max-width: 98%;
 }
 #top, #bottom, #left, #right {
 	background: #BCE981;
@@ -186,10 +189,6 @@ input[type=text] {
     margin: 4px 2px;
     cursor: pointer;
     text-align: center;
-    min-width:165px;
-    max-width:550px;
-    min-height:35px;
-    max-height:265px;
 }
 .deletebutton{
     background-color:#BCE981;
@@ -203,10 +202,6 @@ input[type=text] {
     margin: 4px 2px;
     cursor: pointer;
     text-align: center;
-    min-height:35px;
-    max-height:65px;
-    min-width:135px;
-    max-width:450px;
 }
 
 .ListItem{
@@ -217,10 +212,51 @@ input[type=text] {
 .ProjectCustomer{
     font-size:13px;
     color:#486023;
+    line-height:0.6;
 }
 
 .ProjectDescription {
     font-size:13px;
     color:#94B665;
-    
+    line-height:0.6;
 }
+
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.flex-item-left {
+    background-color: white;
+    width: 10%;
+    height: auto;
+}
+.flex-item-right {
+    background-color: #CDF796;
+    width: 10%;
+    height: auto;
+    margin: 5px;
+    text-align: center;
+    color:gray;
+    font-size:16px;
+}
+
+.flex-item-center {
+    background-color: #EEFFDB;
+    width: 80%;
+    height: auto;
+    margin: 5px;
+}
+
+.warning{
+    padding-top:15px;
+    display:none;
+}
+.warningcontent{
+    border:solid;
+    border-color:#EEA500;
+}
+

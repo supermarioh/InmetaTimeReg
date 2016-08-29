@@ -1,13 +1,12 @@
-﻿@*@{
-        ViewData["Title"] = "Contact";
-    }
-    <h2>@ViewData["Title"].</h2>
-    <h3>@ViewData["Message"]</h3>*@
-
-@section scripts{
-    <script>
-
-    </script>
+﻿@section scripts{
+<script>
+    $(document).ready(function () {
+        $("#completebtn").click(function () {
+            $("#errorDiv").show();
+        });
+        @*location.href='@Url.Action("DeliveryCompleted","Home")'*@
+    });
+</script>
 }
 
 <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:dimgrey;max-height:25px">
@@ -22,160 +21,57 @@
     </div>
 </div>
 
-<div style="padding-top:15px">
-    <div style="border:solid;border-color:#EEA500;">
+<div class="warning" id="errorDiv">
+    <div class="warningcontent">
         <table>
             <tr>
                 <td><img src="~/images/warning.png" /></td>
                 <td><h4>Du må utfylle uken før du leverer timelisten din.</h4></td>
             </tr>
         </table>
-
-    </div>
-
-</div>
-
-<div class="container" style="padding-top:35px">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Man</span>
-            </br>
-            <span style="font-size:22px;align-content:center">07</span>
-        </time>
-    </div>
-
-    <div class="column-center" data-toggle="modal" data-target="#myModal">
-        <div class="ListItem">
-            <h5 class="ProjectCustomer"><strong>Folkehelseinstituttet</strong></h5>
-            <h5 class="ProjectDescription">Samhandling og nytt intranett</h5>
-            <h5 class="ProjectDescription">Analyse/specificasjon</h5>
-            <h5 class="ProjectDescription">Overordnet design</h5>
-        </div>
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px;background-color:#CDF796">
-        <h5 style="color:gray">0,5</h5>
     </div>
 </div>
 
-<div class="container">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Tirs</span>
-            </br>
-            <span style="font-size:22px;align-content:center">08</span>
-        </time>
-    </div>
+@*@foreach (var item in ViewBag.CalendarItems)
+{
+    <p>@item.CustomerName</p>
+}*@
 
-    <div class="column-center">
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px">
-        <h5>0,5</h5>
-    </div>
+@foreach (var item in ViewBag.CalendarItems)
+{
+    @:<div class="flex-container">
+        @:<div class="flex-item-left">
+            @:<time>
+                <span style="font-size:14px">Man</span>
+                @:</br>
+                <span style="font-size:22px;align-content:center">07</span>
+            @:</time>
+        @:</div>
+        @:<div class="flex-item-center">
+            @:<div class="ListItem" style="display:inline-block;vertical-align:top;width:100%">
+                @:<h5 class="ProjectCustomer"><strong>@item.CustomerName</strong></h5>
+                @:<h5 class="ProjectDescription">@item.CustomerProject</h5>
+                @:<h5 class="ProjectDescription">@item.CustomerActivity</h5>
+                @:<h5 class="ProjectDescription">@item.Description</h5>
+            @:</div>
+        @:</div>
+        @:<div class="flex-item-right">
+            @item.Duration
+        @:</div>
+    @:</div>   
+}
+<div>
+    <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
 </div>
-
-<div class="container">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Ons</span>
-            </br>
-            <span style="font-size:22px;align-content:center">09</span>
-        </time>
-    </div>
-
-    <div class="column-center">
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px">
-        <h5>0,5</h5>
-    </div>
-</div>
-
-<div class="container">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Tors</span>
-            </br>
-            <span style="font-size:22px;align-content:center">11</span>
-        </time>
-    </div>
-
-    <div class="column-center">
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px">
-        <h5>0,5</h5>
-    </div>
-</div>
-
-<div class="container">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Fre</span>
-            </br>
-            <span style="font-size:22px;align-content:center">11</span>
-        </time>
-    </div>
-
-    <div class="column-center">
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px">
-        <h5>0,5</h5>
-    </div>
-</div>
-
-<div class="container">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Lør</span>
-            </br>
-            <span style="font-size:22px;align-content:center">12</span>
-        </time>
-    </div>
-
-    <div class="column-center">
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px">
-        <h5>0</h5>
-    </div>
-</div>
-
-<div class="container">
-    <div class="column-left">
-        <time class="icon">
-            <span style="font-size:14px">Søn</span>
-            </br>
-            <span style="font-size:22px;align-content:center">13</span>
-        </time>
-    </div>
-
-    <div class="column-center">
-        <button class="button button3" type="button" data-toggle="modal" data-target="#myModal">+ Legg til ny</button>
-    </div>
-
-    <div class="column-right" style="padding-left:25px">
-        <h5>0</h5>
-    </div>
-</div>
-
 <div class="row">
     <div class="column-left"></div>
     <div class="column-center"></div>
-    <div class="column-right"><h3>2,5 t</h3></div>
+    <div class="column-right" style="text-align:left"><h3>2,5 t</h3></div>
 
 </div>
 <div class="row">
     <div>
-        <button class="button button4" type="button" onclick="location.href='@Url.Action("DeliveryCompleted","Home")'"><h4>✔ Lever timelist</h4></button>
+        <button class="button button4" type="button" id="completebtn"><h4>✔ Lever timelist</h4></button>
     </div>
 </div>
 
@@ -230,10 +126,10 @@
                     <option>7,5t</option>
                 </select>
 
-                <table>
+                <table style="width:100%">
                     <tr>
-                        <td style="padding-right:10px"><button class="deletebutton" type="button">X Slett</button></td>
-                        <td><button class="savebutton" type="button">✔ Lagre</button></td>
+                        <td style="width:50%"><button class="deletebutton" type="button" data-toggle="modal" data-target="#myModalConfirm"><h5>X Slett</h5></button></td>
+                        <td style="width:50%"><button class="savebutton" type="button"><h5>✔ Lagre</h5></button></td>
                     </tr>
                 </table>
 
