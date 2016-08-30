@@ -12,6 +12,8 @@ namespace InmetaTimeReg.Controllers
     {
         public IActionResult Index()
         {
+            //Documentation
+            //https://inmeta.atlassian.net/wiki/display/TREG/Timereg+Home
             //Example login request
             //"https://mtimereg.inmeta.com/timeregserver/login?username=inmeta&password=infeta"
             var loginURL = "https://mtimereg.inmeta.com/timeregserver/login";
